@@ -1,13 +1,26 @@
 // Pegar elementos do input
-//pegar ação do click
-// separar as urgências de acordo com a classificação do range
-// criar filhos td das linhas importante e pouco importante
+// Pegar ação do click
+// Separar as urgências de acordo com a classificação do range
+// Criar filhos td das linhas importante e pouco importante
 // Criar ifs baseados nas ranges
-//Criar uma UL dentro da TD
-// botão de apagar tarefa
-// capturar tecla enter
-// criar limpa form e focus
+// Criar uma UL dentro da TD
+// Botão de apagar tarefa
+// Capturar tecla enter
+// Criar limpa form e focus
 
+function saudacao(){
+    let agora = new Date()
+    let hora = agora.getHours()
+    let saud = document.querySelector("#saud")
+    if (hora < 12){
+        saud.innerHTML += "Bom dia!"
+    }else if (hora < 18) {
+        saud.innerHTML += "Boa tarde!"
+    }else if (hora <24){
+        saud.innerHTML += "Boa note!"
+    }
+}
+saudacao()
 
 let tarefa = document.querySelector("#tarefa")
 let importa = document.querySelector("#importa")
@@ -44,6 +57,7 @@ function limpaImput (){
 }
 
 adicionar.addEventListener('click', function(){
+    if (!tarefa.value) return
     criaTarefa(tarefa.value)
     limpaImput()
     
