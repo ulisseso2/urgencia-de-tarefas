@@ -1,17 +1,7 @@
-// Pegar elementos do input
-// Pegar ação do click
-// Separar as urgências de acordo com a classificação do range
-// Criar filhos td das linhas importante e pouco importante
-// Criar ifs baseados nas ranges
-// Criar uma UL dentro da TD
-// Botão de apagar tarefa
-// Capturar tecla enter
-// Criar limpa form e focus
-
 function saudacao(){
     let agora = new Date()
     let hora = agora.getHours()
-    let saud = document.querySelector("#saud")
+    let saud = document.querySelector(".saud")
     if (hora < 12){
         saud.innerHTML += "Bom dia!"
     }else if (hora < 18) {
@@ -22,67 +12,55 @@ function saudacao(){
 }
 saudacao()
 
-let tarefa = document.querySelector("#tarefa")
-let importa = document.querySelector("#importa")
-let urgent = document.querySelector("#urgent")
-let adicionar = document.querySelector("#adicionar")
-let impeurg = document.querySelector("#impeurg")
-let impnurg = document.querySelector("#impnurg")
-let pimpeurg = document.querySelector("#pimpeurg")
-let pimpnurg = document.querySelector("#pimpnurg")
+let todo = document.querySelector(".todo")
+let shedule = document.querySelector(".shedule")
+let delegate = document.querySelector(".delegate")
+let eliminate = document.querySelector(".eliminate")
+const form = document.querySelector('.form')
+
+form.addEventListener('submit', function(e){
+    e.preventDefault()
+    if(!form.tasks.value){
+        alert("Escreva sua tarefa")
+        return
+    }
+    const li = criali()
+    li.innerText = (form.tasks.value)
+    if(form.important.checked && form.urgent.checked){
+       todo.appendChild(li) 
+    } else if(form.important.checked && !form.urgent.checked){
+        shedule.appendChild(li)
+    }else if(!form.important.checked && form.urgent.checked){
+        delegate.appendChild(li)
+    }else {
+        eliminate.appendChild(li)
+    }
+    buttonLimpar(li)
+    limpaImput()
+})
 
 function criali(){
     const li = document.createElement('li')
     return li
 }
 
-function criaTarefa (entraText){
-    const li = criali()
-    li.innerText = entraText
-    if (importa.value >=3 && urgent.value >=3){
-      impeurg.appendChild(li)  
-    }else if (importa.value <3 && urgent.value >=3){
-        pimpeurg.appendChild(li)
-    }else if (importa.value >=3 && urgent.value <3){
-        impnurg.appendChild(li)
-    }else {
-        pimpnurg.appendChild(li)
-    }
-    buttonLimpar(li)
-}
-
 function limpaImput (){
-    tarefa.value = ""
-    tarefa.focus()
+    form.tasks.value = ""
+    form.tasks.focus()
 }
-
-adicionar.addEventListener('click', function(){
-    if (!tarefa.value) return
-    criaTarefa(tarefa.value)
-    limpaImput()
-    
-})
-
-tarefa.addEventListener('keypress', function(e){
-    if (e.keyCode === 13){
-        if(!tarefa.value)return
-        criaTarefa(tarefa.value)
-        limpaImput()
-    }
-})
 
 function buttonLimpar (li){
     li.innerText += ""
     const but = document.createElement('button')
-    but.innerText = 'x'
-    but.setAttribute('class', 'apagar')
+    but.innerText = 'del'
+    but.setAttribute('class', 'delete')
     but.setAttribute('title', 'Apagar esta Tarefa')
     li.appendChild(but)
 }
 
 document.addEventListener('click', function(e){
     const butx = e.target
-    if (butx.classList.contains('apagar')){
+    if (butx.classList.contains('delete')){
         butx.parentElement.remove()
     }
 })

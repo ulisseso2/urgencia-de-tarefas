@@ -66,7 +66,7 @@ td{
     width: 18px;
     height: 18px;
     margin-left: 5px;
-    background-color: red;
+    background-color: var(--roxo);
     color: white;
     border-style: none;
 }
@@ -74,4 +74,7 @@ td{
     background-color: var(--corfundo);
     color:var(--branco);
 
+}
+ul {
+    list-style-type: none;
 }

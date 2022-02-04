@@ -4,62 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planejamento de prioridades</title>
+    <title>Matriz de Eisenhower</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="header">
+    <header class="header">
         <h1>Prioridades</h1>
     </header>
-    <!--<nav>
-        <ul id="menu">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
-    </nav> -->
     <main>
-        
-        <h2 id="saud"></h2><h2>Crie suas tarefas</h2>
-        <div class="corpo">
-            <label for="tarefa">Tarefa:</label>
-            <input type="text" name="tarefa" id="tarefa">
-            <label for="importa">Nível de Importância:</label>
-            <input type="range" name="importa" id="importa" min="1" max="3">
-            <label for="urgent">Nível de Urgência:</label>
-            <input type="range" name="urgent" id="urgent" min="1" max="3">
-            <input type="button" value="adicionar" id="adicionar">
-        </div>
+        <h2 class="saud"></h2>
+        <h2>Crie suas tarefas</h2>
+        <form class="form" method="get">
+            <label for="tasks">
+                Tarefa:
+                <input type="text" name='tasks'>
+            </label>
+            <label for="important">
+                É importante?
+                <input type="checkbox" name="important" >
+            </label>
+            <label for="urgent">
+                <input type="checkbox" name="urgent">
+            </label>
+            <button type="submit">Adicionar</button>
+        </form>
 
         <table>
             <tr>
-                <td class="base">&nbsp;</td>
-                <td id= "urgente">Urgente</td>
-                <td id="puco_urgente">Não Urgente</td>
+                <td class="base"> &nbsp; </td>
+                <td class= "urgent"> Urgente </td>
+                <td class="not_urgent">Não Urgente</td>
             </tr>
-            <tr id="importante" class="importante">
+            <tr class="important">
                 <td>Importante</td>
-
                 <td>
-                    <ul id="impeurg">
+                    <ul class="todo">
                     </ul>
                 </td>
 
                 <td>
-                    <ul id="impnurg">
+                    <ul class="shedule">
                     </ul>
                 </td>
 
             </tr>
-            <tr id="pouco_importante">
-                <td>Pouco importante</td>
+            <tr class="not_important">
+                <td>Não importante</td>
                 <td>
-                    <ul id="pimpeurg">
+                    <ul class="delegate">
                     </ul>
                 </td>
 
                 <td>
-                    <ul id="pimpnurg">
+                    <ul class="eliminate">
                     </ul>
                 </td>
 
