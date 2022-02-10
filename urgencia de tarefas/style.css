@@ -17,6 +17,11 @@
     --Oswald: 'Oswald', sans-serif;
     --Vietnam: 'Be Vietnam', sans-serif;
 }
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background-color: var(--corfundo);
@@ -28,17 +33,17 @@ main{
     border-radius: 10px;
     max-width: 1200px;
     min-width: 320px;
-    margin: auto;
+    margin: 5px auto;
     padding: 10px;
     color:var(--corfundo);
 }
-.corpo{
-    margin-bottom: 20px;
+.form {
+    display: block;
+    flex-wrap: wrap;
 }
 table{
-    max-width: 1000px;
-    min-width: 800px;
-    margin: auto;
+    width: 100%;
+    margin: 20px auto;
     border: 3px solid black;
 }
 td{
@@ -49,31 +54,20 @@ td{
     font-size: 1.3em;
 
 }
-#pimpnurg>li{
-    color: red;
-    font-style: italic;
-}
   
-.base{ 
-    border: none;
-}
-.apagar{
-    border-radius: 25px;
+.delete{
+    border-radius: 50%;
     text-align:center;
-    margin: auto;
-    padding: 2px;
-    padding-bottom: 5px;
     width: 18px;
     height: 18px;
     margin-left: 5px;
-    background-color: var(--roxo);
+    background-color: rgb(211, 48, 48);
     color: white;
     border-style: none;
 }
-.apagar:hover{
+.delete:hover{
     background-color: var(--corfundo);
     color:var(--branco);
-
 }
 ul {
     list-style-type: none;
