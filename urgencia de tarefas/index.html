@@ -9,25 +9,23 @@
 </head>
 <body>
     <header class="header">
-        <h1>Prioridades</h1>
+        <h1>Prioridades - Matriz de Eisenhower</h1>
     </header>
     <main>
         <h2 class="saud"></h2>
         <h2>Crie suas tarefas</h2>
         <form class="form" method="get">
-            <label for="tasks">
-                Tarefa:
-                <input type="text" name='tasks'>
-            </label>
+
+            <input class="task"type="text" name='tasks' placeholder="qual é a tarefa?">
             <label for="important">
-                É importante?
-                <input type="checkbox" name="important" >
+                É Importante?
+                <input class="check"type="checkbox" name="important" >
             </label>
             <label for="urgent">
-                É urgente?
-                <input type="checkbox" name="urgent">
+                É Urgente?
+                <input class="check"type="checkbox" name="urgent">
             </label>
-            <button type="submit">Adicionar</button>
+            <button class="create" type="submit">criar</button>
         </form>
 
         <table>
@@ -40,11 +38,13 @@
                 <td>Importante</td>
                 <td>
                     <ul class="todo">
+                        <li class="action">Faça</li>
                     </ul>
                 </td>
 
                 <td>
                     <ul class="shedule">
+                        <li class="action">Agende</li>
                     </ul>
                 </td>
 
@@ -53,31 +53,29 @@
                 <td>Não importante</td>
                 <td>
                     <ul class="delegate">
+                        <li class="action">Delegue</li>
                     </ul>
                 </td>
 
                 <td>
                     <ul class="eliminate">
+                        <li class="action">Ignore</li>
                     </ul>
                 </td>
 
             </tr>
         </table>
-        <div>
+        <div class="subtitle">
             <h3>Como funciona a Matriz de Eisenhower?
-            </h3><br>
-            <p>Você deve preencher suas tarefas e definir se são Importantes e/ou urgentes</p><br>
-            <p>É fundamental que seja muito criterioso na classificação para que consiga realmente priorizar suas demandas!</p><br>
-            <p> <strong>Tarefas urgentes e importantes</strong>: prioridade máxima, devem ser feitas o mais rápido possível;</p><br>
-
-            <p><strong>Tarefas urgentes, mas não importantes:</strong> Devem ser delegadas ou automatizadas.</p> <br>
-            <p><strong>Tarefas importante, mas não urgente:</strong> não devem ser procrastinadas, mas podem ser feitas após as urgentes;</p> <br> <p><strong>Tarefas nem importante, nem urgente:</strong> Podem ser desprezadas ou feitas em brechas da rotina;</p> <br>
-            <p>
-                A Matriz de Eisenhower é uma das técnicas de priorização de tarefas mais conhecidas e aplicadas. O nome da ferramenta é uma homenagem ao general americano Dwight Eisenhower, reconhecido como um grande estrategista militar, além de político e diplomata influente.
-                
-                De acordo com ele, existem basicamente dois tipos de tarefas — as urgentes, que têm prazo apertado e não podem ser adiadas; e as importantes, que mesmo que não precisem de resolução imediata, merecem atenção por serem as que mais trazem resultados.
-                
-                Diante disso, separamos as tarefas em quatro quadrantes de natureza dupla, montando um planejamento estratégico para a execução de cada categoria.</p>
+            </h3>
+            <p>Você deve preencher suas tarefas e definir se são Importantes e/ou urgentes</p>
+            <p>É fundamental que seja muito criterioso na classificação para que consiga realmente priorizar suas demandas!</p>
+            <p> <strong>Tarefas urgentes e importantes</strong>: prioridade máxima, devem ser feitas o mais rápido possível;</p>
+            <p><strong>Tarefas urgentes, mas não importantes:</strong> Devem ser delegadas ou automatizadas.</p>
+            <p><strong>Tarefas importante, mas não urgente:</strong> não devem ser procrastinadas, mas podem ser feitas após as urgentes;</p>
+            <p><strong>Tarefas nem importante, nem urgente:</strong> Podem ser desprezadas ou feitas em brechas da rotina;</p> <br>
+            <p>A Matriz de Eisenhower é uma das técnicas de priorização de tarefas mais conhecidas e aplicadas. O nome da ferramenta é uma homenagem ao general americano Dwight Eisenhower, reconhecido como um grande estrategista militar, além de político e diplomata influente. <br>
+                De acordo com ele, existem basicamente dois tipos de tarefas — as urgentes, que têm prazo apertado e não podem ser adiadas; e as importantes, que mesmo que não precisem de resolução imediata, merecem atenção por serem as que mais trazem resultados. <br>Diante disso, separamos as tarefas em quatro quadrantes de natureza dupla, montando um planejamento estratégico para a execução de cada categoria.</p>
         </div>
     </main>
     <script src="index.js"></script>

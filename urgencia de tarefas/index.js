@@ -1,27 +1,8 @@
-function saudacao(){
-    let agora = new Date()
-    let hora = agora.getHours()
-    let saud = document.querySelector(".saud")
-    if (hora < 12){
-        saud.innerHTML += "Bom dia!"
-    }else if (hora < 18) {
-        saud.innerHTML += "Boa tarde!"
-    }else if (hora <24){
-        saud.innerHTML += "Boa note!"
-    }
-}
-saudacao()
-
 let todo = document.querySelector(".todo")
 let shedule = document.querySelector(".shedule")
 let delegate = document.querySelector(".delegate")
 let eliminate = document.querySelector(".eliminate")
 const form = document.querySelector('.form')
-let todoArray = JSON.parse(localStorage.getItem('todoArray')) || []
-let sheduleArray = JSON.parse(localStorage.getItem('sheduleArray')) || []
-let delegateArray = JSON.parse(localStorage.getItem('delegateArray')) || []
-let eliminateArray = JSON.parse(localStorage.getItem('eliminateArray')) || []
-
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
@@ -34,12 +15,8 @@ form.addEventListener('submit', function(e){
     li.innerText = (form.tasks.value)
     if(form.important.checked && form.urgent.checked){
         todo.appendChild(li)
-        todoArray.push(form.tasks.value)
-       localStorage.setItem('todoArray', JSON.stringify(todoArray))
     } else if(form.important.checked && !form.urgent.checked){
         shedule.appendChild(li)
-        sheduleArray.push(form.tasks.value)
-        localStorage.setItem('sheduleArray', JSON.stringify(sheduleArray))
     }else if(!form.important.checked && form.urgent.checked){
         delegate.appendChild(li)
     }else {
@@ -70,11 +47,6 @@ function buttonLimpar (li){
 
 document.addEventListener('click', function(e){
     const butx = e.target
-    const index = todoArray.indexOf(form.tasks.value)
-    const existInLocalStorage = index != -1
-    if(existInLocalStorage){
-           todoArray.splice(index, 1)
-    }
     if (butx.classList.contains('delete')){
         butx.parentElement.remove()
     }
